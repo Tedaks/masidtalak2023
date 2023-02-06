@@ -94,7 +94,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cadet Attachment</a>
                 <div class="dropdown-menu m-0">
-                    <a href="#" class="dropdown-item">Seminar & Workshops</a>
+                    <a href="./seminarandforums.html" class="dropdown-item">Seminar & Forums</a>
                     <a href="./stationImmersion.html" class="dropdown-item">Station Immersion</a>
                 </div>
             </div>
@@ -116,7 +116,17 @@
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="./img/1CGAKO.png" style="object-fit: cover;">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/1CGAKO.png" style="object-fit: cover;">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (1).jpeg" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (1).JPG" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (2).jpeg" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (3).JPG" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (4).JPG" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (5).JPG" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (6).JPG" style="width:100%">
+                        <img class="mySlides w3-animate-opacity position-absolute w-100 h-100" src="./img/gaks (7).jpg" style="width:100%">
+                        <a class="w3-button w3-hover-dark-grey w3-text-white" style="position:absolute;top:45%;left:0; font-size: 50px;" onclick="plusDivs(-1)">❮</a>
+                        <a class="w3-button w3-hover-dark-grey w3-text-white" style="position:absolute;top:45%;right:0; font-size: 50px;" onclick="plusDivs(+1)">❯</a>
                     </div>
                 </div>
                 <div class="col-lg-6 pb-5">
@@ -145,6 +155,43 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Slideshows
+        var slideIndex = 1;
+        
+        function plusDivs(n) {
+          slideIndex = slideIndex + n;
+          showDivs(slideIndex);
+        }
+        
+        function showDivs(n) {
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length} ;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        
+        showDivs(1);
+        
+        // Progress Bars
+        function move() {
+          var elem = document.getElementById("myBar");   
+          var width = 5;
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (width == 100) {
+              clearInterval(id);
+            } else {
+              width++; 
+              elem.style.width = width + '%'; 
+              elem.innerHTML = width * 1  + '%';
+            }
+          }
+        }
+        </script>
 </body>
 
 </html>
